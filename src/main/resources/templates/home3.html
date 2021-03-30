@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello Spring3</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>User</td>
+                <td>E-mail</td>
+            </tr>
+            <tr th:each="alien: ${alien}">
+                <td th:text="${alien.name}"></td>
+                <td th:text="${alien.email}"></td>
+            </tr>	
+        </table>
+    </body>
+</html>
+

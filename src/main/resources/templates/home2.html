@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello Spring2</title>
+    </head>
+    <body>
+        <form method="post" th:action="@{/add}" th:object="${alien}">
+          <p>名前を入力してください</p>
+          <input type="text" name="name" th:field="*{name}">
+          <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">ネームエラー</p>
+          <p>メールアドレスを入力してください</p>
+          <input type="text" name="email" th:field="*{email}">
+          <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">メールアドレスエラー</p>
+          <input type="submit" value="入力">
+        </form>
+    </body>
+</html>
