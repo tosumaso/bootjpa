@@ -5,6 +5,14 @@
         <title>Hello Spring2</title>
     </head>
     <body>
+
+      <!-- th:action="@{path}" formの送信先, 
+        th:object="${オブジェクト}" コントローラーでマッピングされたクラスにタグ内でアクセスできる
+        th:filed="*{フィールド}" th:objectで指定したオブジェクトのフィールドにアクセスできる
+        <input>のname属性で送るクエリパラメータを指定
+        th:if="${条件式}" trueが戻り値の場合タグを実行,"${#fields.hasErrors('フィールド名')}"でバリデーションチェック
+        th:errors="*{フィールド}" オブジェクトのフィールドにバリデーションが引っかかる場合のエラーを投げる -->
+
         <form method="post" th:action="@{/add}" th:object="${alien}">
           <p>名前を入力してください</p>
           <input type="text" name="name" th:field="*{name}">
